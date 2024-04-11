@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive UI Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding:20px 60px;
+      margin: 20px;
+      border: 1px solid black;
+
+    }
+    .grid-item {
+    
+      padding: 10px;
+      border: 1px solid black;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    button{
+        border: none;
+        background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="grid-item">
+      <button class="bold-button" onclick="toggleBold('sentence1')">Bold</button>
+      <button class="italic-button" onclick="toggleItalic('sentence1')">Italic</button>
+      <button class="underline-button" onclick="toggleUnderline('sentence1')">Underline</button>
+      <input type="number" class="font-size-input" min="10" max="30" value="16" onchange="changeFontSize('sentence1', this.value)">
+      <input type="color" class="color-input" onchange="changeColor('sentence1', this.value)">
+    </div>
+    <div  class="grid-item">
+
+      <p id="sentence1">He's not the sharpest knife in the drawer.</p>
+
+    </div>
+    <div class="grid-item">
+      <button class="bold-button" onclick="toggleBold('sentence2')">Bold</button>
+      <button class="italic-button" onclick="toggleItalic('sentence2')">Italic</button>
+      <button class="underline-button" onclick="toggleUnderline('sentence2')">Underline</button>
+      <input type="number" class="font-size-input" min="10" max="30" value="16" onchange="changeFontSize('sentence2', this.value)">
+      <input type="color" class="color-input" onchange="changeColor('sentence2', this.value)">
+    </div>
+    <div  class="grid-item">
+
+        <p id="sentence2">The big building was blazing with lights.</p>
+
+  
+      </div>
+    <div class="grid-item">
+      <button class="bold-button" onclick="toggleBold('sentence3')">Bold</button>
+      <button class="italic-button" onclick="toggleItalic('sentence3')">Italic</button>
+      <button class="underline-button" onclick="toggleUnderline('sentence3')">Underline</button>
+      <input type="number" class="font-size-input" min="10" max="30" value="16" onchange="changeFontSize('sentence3', this.value)">
+      <input type="color" class="color-input" onchange="changeColor('sentence3', this.value)">
+    </div>
+    <div  class="grid-item">
+        <p id="sentence3">Now you must answer some big questions.</p>
+
+  
+      </div>
+    <div class="grid-item">
+      <button class="bold-button" onclick="toggleBold('sentence4')">Bold</button>
+      <button class="italic-button" onclick="toggleItalic('sentence4')">Italic</button>
+      <button class="underline-button" onclick="toggleUnderline('sentence4')">Underline</button>
+      <input type="number" class="font-size-input" min="10" max="30" value="16" onchange="changeFontSize('sentence4', this.value)">
+      <input type="color" class="color-input" onchange="changeColor('sentence4', this.value)">
+    </div>
+    <div  class="grid-item">
+
+        <p id="sentence4">Get Your Act Together!.</p>
+
+  
+      </div>
+  </div>
+
+  <script>
+    function toggleBold(sentenceId) {
+      var sentence = document.getElementById(sentenceId);
+      sentence.style.fontWeight = sentence.style.fontWeight === 'bold' ? 'normal' : 'bold';
+    }
+
+    function toggleItalic(sentenceId) {
+      var sentence = document.getElementById(sentenceId);
+      sentence.style.fontStyle = sentence.style.fontStyle === 'italic' ? 'normal' : 'italic';
+    }
+
+    function toggleUnderline(sentenceId) {
+      var sentence = document.getElementById(sentenceId);
+      sentence.style.textDecoration = sentence.style.textDecoration === 'underline' ? 'none' : 'underline';
+    }
+
+    function changeFontSize(sentenceId, size) {
+      var sentence = document.getElementById(sentenceId);
+      sentence.style.fontSize = size + 'px';
+    }
+
+    function changeColor(sentenceId, color) {
+      var sentence = document.getElementById(sentenceId);
+      sentence.style.color = color;
+    }
+  </script>
+</body>
+</html>
